@@ -1,0 +1,14 @@
+USE mydb;
+
+SELECT categories.name as category_name,
+ COUNT(order_details.id) as order_details_count,
+ AVG(order_details.quantity) as avg_quantity
+
+FROM orders
+
+INNER JOIN order_details ON order_details.order_id = orders.id
+INNER JOIN products ON products.id = order_details.product_id
+INNER JOIN suppliers ON suppliers.id = products.supplier_id
+INNER JOIN categories ON categories.id = products.category_id
+
+GROUP BY category_name

@@ -1,0 +1,4 @@
+USE mydb;
+
+SELECT * FROM employees
+WHERE employees.employee_id > 3 AND employees.employee_id <= 10

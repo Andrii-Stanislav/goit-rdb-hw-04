@@ -1,0 +1,9 @@
+USE mydb;
+
+SELECT COUNT(order_details.id) AS order_details_count
+
+FROM order_details
+
+INNER JOIN orders ON order_details.order_id = orders.id
+
+WHERE orders.id = 10248
